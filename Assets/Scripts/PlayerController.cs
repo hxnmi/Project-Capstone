@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float speed;
     private CharacterController controller;
     private Vector3 direction;
-    [SerializeField] private float speed;
+    private Vector3 lastDie;
+    private float speedRun;
 
     [Header("Lane Movement")]
     [SerializeField] private int desiredLane = 1;
@@ -24,6 +27,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         direction.z = speed;
+        
 
         if(controller.isGrounded)
         {
@@ -74,7 +78,6 @@ public class PlayerController : MonoBehaviour
             controller.Move(moveDir);
         else
             controller.Move(diff);
-        
     }
 
     private void FixedUpdate() 
@@ -87,11 +90,27 @@ public class PlayerController : MonoBehaviour
         direction.y = jumpForce;
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    // private void OnControllerColliderHit(ControllerColliderHit hit)
+    // {
+    //     if(hit.transform.tag == "Obstacle")
+    //     {
+    //         PlayerManager.gameOver = true;
+    //         Time.timeScale = 0;
+    //     }else if(hit.transform.tag == "Boost")
+    //     {
+    //         GetComponent<Collider>().enabled = false;
+    //         speed = 100;
+    //         isInvisible = true;
+    //     }
+    // }
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if(hit.transform.tag == "Obstacle")
+        if (collision.gameObject.tag == "Obstacle")
         {
             PlayerManager.gameOver = true;
+            Time.timeScale = 0;
         }
     }
+
 }
