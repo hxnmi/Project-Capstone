@@ -31,6 +31,7 @@ public class PlayerBoosterManager : MonoBehaviour
         {
             GetComponent<Collider>().isTrigger = true;
             player.GetComponent<PlayerController>().speed = 100;
+            player.GetComponent<CapsuleCollider>().enabled = false;
             isInvisible = true;
         }
     }
