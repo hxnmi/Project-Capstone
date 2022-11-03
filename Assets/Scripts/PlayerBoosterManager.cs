@@ -11,7 +11,6 @@ public class PlayerBoosterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isInvisible);
         if (isInvisible)
         {
             timer += Time.deltaTime;
