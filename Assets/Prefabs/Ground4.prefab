@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 782183216344564332, guid: 7805ab858f3f57d44a468df562c04e05, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7805ab858f3f57d44a468df562c04e05, type: 3}
 --- !u!4 &2750198201961041753 stripped
@@ -117,6 +121,10 @@ PrefabInstance:
     - target: {fileID: 5321394964656170300, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
       propertyPath: m_Name
       value: Ball (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321394964656170300, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5355886387483904013, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
       propertyPath: m_RootOrder
@@ -179,6 +187,10 @@ PrefabInstance:
     - target: {fileID: 5321394964656170300, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
       propertyPath: m_Name
       value: Ball (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321394964656170300, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5355886387483904013, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
       propertyPath: m_RootOrder
@@ -374,6 +386,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5321394964656170300, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5355886387483904013, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -435,6 +451,10 @@ PrefabInstance:
     - target: {fileID: 5321394964656170300, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
       propertyPath: m_Name
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321394964656170300, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5355886387483904013, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
       propertyPath: m_RootOrder
@@ -625,6 +645,10 @@ PrefabInstance:
     - target: {fileID: 5321394964656170300, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
       propertyPath: m_Name
       value: Ball (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321394964656170300, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5355886387483904013, guid: df4f29e38ae84e24c9f31263764638a8, type: 3}
       propertyPath: m_RootOrder

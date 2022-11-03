@@ -111,28 +111,23 @@ public class PlayerController : MonoBehaviour
         direction.y = jumpForce;
     }
 
-    // private void OnControllerColliderHit(ControllerColliderHit hit)
-    // {
-    //     if(hit.transform.tag == "Obstacle")
-    //     {
-    //         PlayerManager.gameOver = true;
-    //         Time.timeScale = 0;
-    //     }else if(hit.transform.tag == "Boost")
-    //     {
-    //         GetComponent<Collider>().enabled = false;
-    //         speed = 100;
-    //         isInvisible = true;
-    //     }
-    // }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (collision.gameObject.tag == "Obstacle")
+        if(hit.transform.tag == "Obstacle")
         {
             PlayerManager.gameOver = true;
             Time.timeScale = 0;
         }
     }
+
+    // private void OnCollisionEnter(Collision collision)
+    // {
+    //     if (collision.gameObject.tag == "Obstacle")
+    //     {
+    //         PlayerManager.gameOver = true;
+    //         Time.timeScale = 0;
+    //     }
+    // }
 
     private IEnumerator Slide()
     {

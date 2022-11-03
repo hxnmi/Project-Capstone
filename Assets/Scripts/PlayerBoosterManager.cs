@@ -20,7 +20,14 @@ public class PlayerBoosterManager : MonoBehaviour
                 timer = 0;
                 GetComponent<Collider>().isTrigger = false;
                 player.GetComponent<PlayerController>().speed = 15;
-                Debug.Log(player.GetComponent<PlayerController>().speed);
+                Collider[] hitColliders = Physics.OverlapBox(player.transform.position, new Vector3(10, 10, 50), player.transform.rotation);
+                foreach (var coll in hitColliders)
+                {
+                    if (coll.CompareTag("Obstacle"))
+                    {
+                        coll.GetComponent<BoxCollider>().isTrigger = false;
+                    }
+                }
             }
         }
     }
@@ -29,9 +36,18 @@ public class PlayerBoosterManager : MonoBehaviour
     {
         if (other.CompareTag("Boost"))
         {
-            GetComponent<Collider>().isTrigger = true;
+            // GetComponent<Collider>().isTrigger = true;
             player.GetComponent<PlayerController>().speed = 100;
-            player.GetComponent<CapsuleCollider>().enabled = false;
+            Collider[] hitColliders = Physics.OverlapBox(player.transform.position, new Vector3(10, 10, 1000), player.transform.rotation);
+            foreach (var coll in hitColliders)
+            {
+                if (coll.CompareTag("Obstacle"))
+                {
+                    Debug.Log(coll);
+                    coll.GetComponent<BoxCollider>().isTrigger = true;
+                }
+            }
+            // player.GetComponent<CapsuleCollider>().enabled = false;
             isInvisible = true;
         }
     }
