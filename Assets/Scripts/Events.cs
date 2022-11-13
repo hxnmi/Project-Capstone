@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Events : MonoBehaviour
 {
+    public GameObject panelKuis;
+    public GameObject gameOverpanel;
+    public KuisManager kuisManager;
     public void ReplayGame()
     {
         SceneManager.LoadScene("Level");
@@ -13,5 +16,12 @@ public class Events : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void KuisRevive()
+    {
+        gameOverpanel.SetActive(false);
+        kuisManager.RandomSoal();
+        panelKuis.SetActive(true);
     }
 }

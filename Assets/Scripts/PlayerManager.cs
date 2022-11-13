@@ -7,10 +7,12 @@ public class PlayerManager : MonoBehaviour
 {
     public static bool gameOver;
     public GameObject gameOverPanel;
+    public GameObject kuisPanel;
     public GameObject player;
     public PlayerController playerController;
     public static bool isGameStarted;
     public GameObject startingText;
+    [SerializeField] private Health playerHealth;
     void Start()
     {
         gameOver = false;
@@ -37,6 +39,8 @@ public class PlayerManager : MonoBehaviour
     {
         gameOver = false;
         gameOverPanel.SetActive(false);
+        kuisPanel.SetActive(false);
+        playerHealth.AddHealth(1);
         Collider[] hitColliders = Physics.OverlapBox(player.transform.position, new Vector3(3, 3, 50), player.transform.rotation);
         foreach (var coll in hitColliders)
         {

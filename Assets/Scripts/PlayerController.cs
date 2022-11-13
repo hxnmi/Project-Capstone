@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [Header("Jump")]
     [SerializeField] private float jumpForce;
     [SerializeField] private float Gravity;
+    [SerializeField] private Health playerHealth;
 
     void Start()
     {
@@ -115,8 +116,9 @@ public class PlayerController : MonoBehaviour
     {
         if(hit.transform.tag == "Obstacle")
         {
-            PlayerManager.gameOver = true;
-            Time.timeScale = 0;
+            playerHealth.TakeDamage(1);
+            Debug.Log("nabrak");
+            Destroy(hit.gameObject);
         }
     }
 
