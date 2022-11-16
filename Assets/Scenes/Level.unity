@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: d09e114f4fe4d434c8dbed9f3178e5c6, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1465,7 +1465,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelKuis: {fileID: 1863228976}
   gameOverpanel: {fileID: 1155547763}
+  youLose: {fileID: 0}
   kuisManager: {fileID: 1863228978}
+  coinCollector: {fileID: 2108759169}
 --- !u!1 &1397377711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,6 +2660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d3100ced079ec4e9c78c943ebbf803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coins: 0
   coinsText: {fileID: 2109332783}
 --- !u!114 &2108759170
 MonoBehaviour:

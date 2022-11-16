@@ -40,7 +40,7 @@ public class KuisManager : MonoBehaviour
             }
             else
             {
-                tombolJawaban[i].onClick.RemoveListener(eventsManager.MainMenu);
+                tombolJawaban[i].onClick.RemoveListener(eventsManager.MainMenuKalah);
             }
         }
         ListJawaban.Clear();
@@ -76,7 +76,7 @@ public class KuisManager : MonoBehaviour
             }
             else
             {
-                tombolJawaban[i].onClick.AddListener(eventsManager.MainMenu);
+                tombolJawaban[i].onClick.AddListener(eventsManager.MainMenuKalah);
             }
             Debug.Log(tombolJawaban[i].GetComponentInChildren<TextMeshPro>());
             tombolJawaban[i].GetComponentInChildren<Text>().text = ListJawaban[i].ToString();

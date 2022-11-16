@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        gameObject.GetComponent<Renderer>().material = GameManager.playerSkin;
     }
 
     void Update()

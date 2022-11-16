@@ -14,13 +14,13 @@ public class PlayerBoosterManager : MonoBehaviour
         if (isInvisible)
         {
             timer += Time.deltaTime;
-            if (timer > 5)
+            if (timer >= 5)
             {
+                player.GetComponent<PlayerController>().speed = 15;
                 isInvisible = false;
                 timer = 0;
                 GetComponent<Collider>().isTrigger = false;
-                player.GetComponent<PlayerController>().speed = 15;
-                Collider[] hitColliders = Physics.OverlapBox(player.transform.position, new Vector3(10, 10, 50), player.transform.rotation);
+                Collider[] hitColliders = Physics.OverlapBox(player.transform.position, new Vector3(10, 10, 100), player.transform.rotation);
                 foreach (var coll in hitColliders)
                 {
                     if (coll.CompareTag("Obstacle"))
@@ -38,7 +38,7 @@ public class PlayerBoosterManager : MonoBehaviour
         {
             // GetComponent<Collider>().isTrigger = true;
             player.GetComponent<PlayerController>().speed = 100;
-            Collider[] hitColliders = Physics.OverlapBox(player.transform.position, new Vector3(10, 10, 1000), player.transform.rotation);
+            Collider[] hitColliders = Physics.OverlapBox(player.transform.position, new Vector3(10, 10, 5100), player.transform.rotation);
             foreach (var coll in hitColliders)
             {
                 if (coll.CompareTag("Obstacle"))
