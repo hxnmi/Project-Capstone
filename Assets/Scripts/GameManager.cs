@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static int coin;
     public static Material playerSkin;
     public int coins;
+    public string PlayerPrefString;
 
     public Text text;
 
@@ -17,12 +18,21 @@ public class GameManager : MonoBehaviour
     public List<Image> coinImage;
     public List<Button> equipButton;
     public List<int> harga;
+    public List<int> Skin;
 
     // Start is called before the first frame update
     void Start()
     {
         coins = LoadScore();
         text.text = coins.ToString();
+        PlayerPrefString = PlayerPrefs.GetString("Baju");
+        StringToList(PlayerPrefString, "+");
+        for (int i = 0; i < Skin.Count; i++)
+        {
+            price[Skin[i]].gameObject.SetActive(false);
+            coinImage[Skin[i]].gameObject.SetActive(false);
+            equipButton[Skin[i]].gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -41,6 +51,16 @@ public class GameManager : MonoBehaviour
             price[idx].gameObject.SetActive(false);
             coinImage[idx].gameObject.SetActive(false);
             equipButton[idx].gameObject.SetActive(true);
+            if (PlayerPrefs.HasKey("Baju"))
+            {
+                var HavingSkin = PlayerPrefs.GetString("Baju");
+                var stringHavingSkin = HavingSkin + idx.ToString() + "+";
+                PlayerPrefs.SetString("Baju", stringHavingSkin);
+            }
+            else
+            {
+                PlayerPrefs.SetString("Baju", idx.ToString() + "+");
+            }
         }
     }
 
@@ -53,5 +73,20 @@ public class GameManager : MonoBehaviour
         if(PlayerPrefs.HasKey("coins"))
             return PlayerPrefs.GetInt("coins");
         return defaultValue;
+    }
+    void StringToList(string message, string seperator)
+    {
+        Skin.Clear();
+        string tok = "";
+        foreach(char character in message)
+        {
+            tok = tok + character;
+            if (tok.Contains(seperator))
+            {
+                tok = tok.Replace(seperator, "");
+                Skin.Add(int.Parse(tok));
+                tok = "";
+            }
+        }
     }
 }
