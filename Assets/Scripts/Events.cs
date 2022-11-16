@@ -51,10 +51,9 @@ public class Events : MonoBehaviour
 
     public void MainMenuKalah()
     {
-        SceneManager.LoadScene("MainMenu");
-        if (PlayerPrefs.HasKey("score"))
+        if (PlayerPrefs.HasKey("coins"))
         {
-            var earncoin = PlayerPrefs.GetInt("score");
+            var earncoin = PlayerPrefs.GetInt("coins");
             var coinCollectorCoins = earncoin + coinCollector.coins;
             PlayerPrefs.SetInt("coins", coinCollectorCoins);
         }
@@ -62,5 +61,7 @@ public class Events : MonoBehaviour
         {
             PlayerPrefs.SetInt("coins", coinCollector.coins);
         }
+        SceneManager.LoadScene("MainMenu");
+        
     }
 }
