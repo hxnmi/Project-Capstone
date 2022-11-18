@@ -69,11 +69,16 @@ public class GameManager : MonoBehaviour
         playerSkin = skin;
     }
 
-    int LoadScore(int defaultValue = 0){
+    int LoadScore(){
+        int defaultValue = 0;
+
         if(PlayerPrefs.HasKey("coins"))
             return PlayerPrefs.GetInt("coins");
+        
+        defaultValue = PlayerPrefs.GetInt("coins");
         return defaultValue;
     }
+
     void StringToList(string message, string seperator)
     {
         Skin.Clear();

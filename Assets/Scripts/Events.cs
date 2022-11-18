@@ -8,7 +8,6 @@ public class Events : MonoBehaviour
 {
     public GameObject panelKuis;
     public GameObject gameOverpanel;
-    public GameObject youLose;
     public KuisManager kuisManager;
     public CoinCollector coinCollector;
 
