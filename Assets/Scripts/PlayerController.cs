@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    private Vector3 origin;
     public float speed;
     private CharacterController controller;
     private Vector3 direction;
@@ -13,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed;
     public Animator animator;
     private bool isSliding;
+    public int score;
+    public Text scoreText;
 
     [Header("Lane Movement")]
     [SerializeField] private int desiredLane = 1;
@@ -27,10 +31,13 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         gameObject.GetComponent<Renderer>().material = GameManager.playerSkin;
+        origin = transform.position;
     }
 
     void Update()
     {
+        score = (int) Vector3.Distance(origin, transform.position);
+        scoreText.text = score.ToString();
         if (!PlayerManager.isGameStarted)
         {
             return;

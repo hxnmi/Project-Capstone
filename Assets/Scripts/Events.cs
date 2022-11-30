@@ -10,6 +10,7 @@ public class Events : MonoBehaviour
     public GameObject gameOverpanel;
     public KuisManager kuisManager;
     public CoinCollector coinCollector;
+    public PlayerController player;
 
     public void Play()
     {
@@ -59,6 +60,22 @@ public class Events : MonoBehaviour
         else
         {
             PlayerPrefs.SetInt("coins", coinCollector.coins);
+        }
+        if (PlayerPrefs.HasKey("score"))
+        {
+            var scoretemp = PlayerPrefs.GetInt("score");
+            if (player.score > scoretemp)
+            {
+                PlayerPrefs.SetInt("score", player.score);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("score", scoretemp);
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("score", player.score);
         }
         SceneManager.LoadScene("MainMenu");
         
