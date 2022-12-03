@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float Gravity;
     [SerializeField] private Health playerHealth;
+    [SerializeField] private AudioSource jumpSFX;
 
     void Start()
     {
@@ -117,6 +118,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        jumpSFX.Play();
         direction.y = jumpForce;
     }
 

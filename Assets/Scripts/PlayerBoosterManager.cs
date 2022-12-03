@@ -7,6 +7,7 @@ public class PlayerBoosterManager : MonoBehaviour
     public GameObject player;
     public bool isInvisible = false;
     [SerializeField] private float timer;
+    [SerializeField] private AudioSource boosterSFX;
     
     // Update is called once per frame
     void Update()
@@ -37,6 +38,7 @@ public class PlayerBoosterManager : MonoBehaviour
         if (other.CompareTag("Boost"))
         {
             // GetComponent<Collider>().isTrigger = true;
+            boosterSFX.Play();
             player.GetComponent<PlayerController>().speed = 100;
             Collider[] hitColliders = Physics.OverlapBox(player.transform.position, new Vector3(10, 10, 5100), player.transform.rotation);
             foreach (var coll in hitColliders)
