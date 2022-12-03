@@ -125,7 +125,6 @@ public class PlayerController : MonoBehaviour
         if(hit.transform.tag == "Obstacle")
         {
             playerHealth.TakeDamage(1);
-            Debug.Log("nabrak");
             Destroy(hit.gameObject);
         }
     }
