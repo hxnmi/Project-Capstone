@@ -6,6 +6,7 @@ using UnityEngine;
 public class BoosterManager : MonoBehaviour
 {
     public Collider player;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

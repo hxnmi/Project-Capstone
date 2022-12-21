@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 8811608362472930053}
   - component: {fileID: 8970529068093045113}
   m_Layer: 0
-  m_Name: Parent
+  m_Name: Coin
   m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

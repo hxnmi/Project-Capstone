@@ -1774,7 +1774,7 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1155547763}
   kuisPanel: {fileID: 1863228976}
   player: {fileID: 2108759160}
-  playerController: {fileID: 0}
+  playerController: {fileID: 2108759165}
   startingText: {fileID: 1236275164}
   playerHealth: {fileID: 2108759171}
 --- !u!4 &1413146909
