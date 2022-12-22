@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerController playerController;
     public static bool isGameStarted;
     public GameObject startingText;
+    public Animator anim;
     [SerializeField] private Health playerHealth;
     void Start()
     {
@@ -30,6 +31,7 @@ public class PlayerManager : MonoBehaviour
 
         if (SwipeManager.tap)
         {
+            anim.SetTrigger("Run");
             isGameStarted = true;
             Destroy(startingText);
         }
@@ -37,6 +39,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Revive()
     {
+        anim.SetTrigger("Run");
         gameOver = false;
         gameOverPanel.SetActive(false);
         kuisPanel.SetActive(false);

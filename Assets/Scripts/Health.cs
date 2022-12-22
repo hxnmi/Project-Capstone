@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float startingHealth;
     [SerializeField] private AudioSource hitSFX;
     [SerializeField] private AudioSource deadSFX;
+    public Animator anim;
     public float currentHealth { get; private set; }
     private bool dead;
 
@@ -21,6 +22,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            anim.SetTrigger("Dead");
             deadSFX.Play();
             PlayerManager.gameOver = true;
             Time.timeScale = 0;
