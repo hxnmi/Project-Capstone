@@ -118,6 +118,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        animator.SetTrigger("Jump");
         jumpSFX.Play();
         direction.y = jumpForce;
     }
